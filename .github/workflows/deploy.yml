@@ -1,4 +1,4 @@
-name: Deploy Numberz to Github PAges, including win screen jpg and solutions cache files.
+name: Deploy Numberz to Github Pages, including win screen jpg and solutions cache files.
 
 on:
   push:
