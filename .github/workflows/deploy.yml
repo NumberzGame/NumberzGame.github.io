@@ -36,7 +36,7 @@ jobs:
           mkdir -p ./dist/
           mv *.jpg ./dist/
 
-      - name: ls -la ./dist/
+      - run: ls -la ./dist/
 
       # To allow possibly including other content on this home 
       # page in future as well, we pull in Numberz
