@@ -49,12 +49,6 @@ jobs:
         run: |
           mkdir -p ./dist/
           mv grades_goals_forms_solutions ./dist/
-
-      - name: Download Winscreen picture
-        run: curl -L https://cdn.stocksnap.io/img-thumbs/960w/fireworks-background_CPLJUAMC1T.jpg -o fireworks-background_CPLJUAMC1T.jpg
-
-      - name: Move Winscreen picture
-        run: mv *.jpg ./dist/
          
       - name: Setup Pages
         uses: actions/configure-pages@v4
