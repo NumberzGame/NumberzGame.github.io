@@ -29,43 +29,38 @@ jobs:
       - name: Unzip solutions
         run: unzip pictures.zip
 
-      - run: ls -la
-
       - name: Move solutions to dist
         run: |
           mkdir -p ./dist/
           mv *.jpg ./dist/
-
-      - run: ls -la ./dist/
-
       # To allow possibly including other content on this home 
       # page in future as well, we pull in Numberz
       # from its sister repo home, into this mostly empty repo.   
-      # - name: Checkout
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: NumberzGame/Numberz
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: NumberzGame/Numberz
 
-      # - name: Set up Node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      #     cache: 'npm'
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
 
-      # - name: Install dependencies
-      #   run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      # - name: Build
-      #   run: npm run build
+      - name: Build
+        run: npm run build
          
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: './dist'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
 
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
